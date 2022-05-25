@@ -1,0 +1,35 @@
+<h1 class="text-center" style="background-color:azure ;">˜”*°•.˜”*°• 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐅𝐫𝐚𝐧𝐜𝐡𝐢𝐬𝐞 𝐂𝐫𝐢𝐜𝐤𝐞𝐭 •°*”˜.•°*”˜</h1>
+<h2 class="text-center" style="color: white">𝘾𝙍𝙀𝘼𝙏𝙀 𝙉𝙀𝙒 𝙋𝙇𝘼𝙔𝙀𝙍</h2>
+
+
+
+<div class="container col-md-6">
+    
+    <form  (ngSubmit)="createPlayer()">
+       
+      <div class="form-group">
+        <label for="playername"style="color: white">𝗣𝗹𝗮𝘆𝗲𝗿 𝗡𝗮𝗺𝗲 :</label>
+        <input type="text" class="form-control" id="playername" placeholder="Enter player name" name="playername" 
+           [(ngModel)]="player.playerName" [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <div class="form-group" >
+        <label for="playerBuddingBudget"style="color: white">𝐏𝐥𝐚𝐲𝐞𝐫 𝐁𝐢𝐝𝐝𝐢𝐧𝐠 𝐁𝐮𝐝𝐠𝐞𝐭 :</label>
+        <input type="number" class="form-control" id="playerBuddingBudget"  name="playerBuddingBudget" 
+          [(ngModel)]="player.playerBiddingBudget" [ngModelOptions]="{standalone: true}">
+      </div>
+      <br>
+        <div class="input-group input-group-sm-mb-3">
+          <label for="playerBuddingBudget"style="color: white">𝗦𝗲𝗹𝗲𝗰𝘁 𝗧𝗲𝗮𝗺 : </label>
+          <select [(ngModel)]="player.playerTeamName" [ngModelOptions]="{standalone: true}">
+            <option value="0">--select TeamName--</option>
+        <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+        <option>NA</option>
+          </select>
+        </div>
+        <br>
+        <div class="text-center">
+      <button type="submit"playerBuddingBudget class="btn btn-info">Create Player</button></div>
+    </form>
+   
+  </div>

@@ -1,0 +1,31 @@
+<h1 class="text-center" style="color: white"> 𝙇𝙄𝙎𝙏 𝙊𝙁 𝙏𝙀𝘼𝙈𝙎</h1>
+    
+<br>
+        <div class="input-group input-group-sm-mb-3" style="color: white">
+          𝙎𝙚𝙡𝙚𝙘𝙩 𝙏𝙚𝙖𝙢 :<select #playerTeamName style="margin-right: 50px;">
+             <option value="0">--select teamname--</option>
+            <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+            <option value="1">NA</option>
+        
+          </select>
+
+          <button (click)="showTeam(playerTeamName.value)" class="btn btn-secondary" >Show Team</button>
+
+          <table class="table" style="color: white"> 
+            <br><br>
+            <tr>
+            <th>PlayerId</th>
+            <th>Player Name</th>
+            <th>Player Bidding Budget</th>
+            <th>Player Team Name</th>
+            </tr>
+            
+            <tr *ngFor="let players of players" style="color:white ;">
+              <td>{{players.playerId}}</td>
+              <td>{{players.playerName}}</td>
+              <td>{{players.playerBiddingBudget}}</td>
+              <td>{{players.playerTeamName}}</td>
+                
+          </table>
+        </div>
+ 

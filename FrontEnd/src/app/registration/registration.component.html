@@ -1,0 +1,56 @@
+
+
+<div class="container col-md-4" style="background-color:burlywood" style="background-image:url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000)">
+    <h2 style="color:rgb(111, 84, 111)" class="text-center">𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐀𝐓𝐈𝐎𝐍 𝐏𝐀𝐆𝐄</h2>
+
+<form #registrationForm="ngForm" (ngSubmit)="register()" >
+      
+    <small class="text-danger">{{msg}}</small>    
+    <div class="form-group">
+      <label for="username">𝐔𝐬𝐞𝐫𝐍𝐚𝐦𝐞:</label>
+      <input type="text" class="form-control" minlength="4" maxlength="15" placeholder="Enter UserName" name="userName" [(ngModel)]="user.userName" ngModel  #name="ngModel" required [class.is-invalid]="name.invalid && name.touched">
+    </div>
+    <span class="text-danger" [class.d-none]="name.valid || name.touched">UserName is required</span>
+    <span *ngIf="name.invalid && name.touched" style="color:red">username should contain 4 to 15 characters</span>
+    
+    <div class="mb-3">
+        <label for="age" class="form-label">𝗔𝗴𝗲 : </label>
+        <input type="number" class="form-control"  name="age"  [(ngModel)]="user.age">
+      </div>
+
+    <div class="mb-3">
+        <label for="gender" class="form-label"> 𝗚𝗲𝗻𝗱𝗲𝗿 : </label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="Male" name="gender"  [(ngModel)]="user.gender" >
+              <label class="form-check-label" for="gender" >Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="Female" name="gender" [(ngModel)]="user.gender">
+              <label class="form-check-label" for="gender"> Female</label>
+            </div>
+    </div>
+      
+           
+
+    <div class="form-group">
+        <label for="password">𝗣𝗮𝘀𝘀𝘄𝗼𝗿𝗱:</label>
+        <input type="password" class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{4,10}$" minlength="5" maxlength="10" name="password" [(ngModel)]="user.password" ngModel required #password="ngModel">
+      </div>
+      
+      <span *ngIf="password.invalid && password.touched" style="color:red">Must contain at least one number and one uppercase and lowercase letter, and at least 4 to 10 characters</span>
+     
+
+
+
+
+
+
+    
+      <br/>
+    <div class="text-center">
+        <button [disabled]="password.invalid" type="submit"  class="btn btn-primary">Register</button></div>
+  </form>
+  <div>
+  <small class="float-right" (click)="gotologin()">𝙀𝙭𝙞𝙨𝙩𝙞𝙣𝙜 𝙐𝙨𝙚𝙧? 𝙇𝙤𝙜𝙞𝙣 𝙃𝙚𝙧𝙚</small>
+</div>
+</div>

@@ -1,0 +1,33 @@
+
+<h1 class="text-center" style="color: white">𝙇𝙄𝙎𝙏 𝙊𝙁 𝙋𝙇𝘼𝙔𝙀𝙍𝙎 </h1>
+
+
+
+          <form (nngSubmit)="showPlayer()">
+        
+      <br><br>
+        <table class="table mt-3">
+          <thead>
+            <tr style="color: rgb(255, 255, 255)">
+              <th scope="col">Player ID</th>
+              <th scope="col">Player Name</th>
+              <th scope="col"> Team Name</th>
+              <th scope="col">Player Budget($)</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let player of players" style="color: white;">
+                <td>{{player.playerId}}</td>
+                <td>{{player.playerName}}</td>
+                <td>{{player.playerTeamName}}</td>
+                <td>{{player.playerBiddingBudget }}</td>
+      
+            </tr>
+      
+            </tbody>
+            </table>
+        </form>
+            
+            
+          

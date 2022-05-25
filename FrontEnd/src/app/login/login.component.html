@@ -1,0 +1,30 @@
+
+<html>
+    <body >
+    
+    <div class="container col-md-6" style="background-color:aqua" style="background-image:url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000)">
+        <h2 style="color:darkmagenta" class="text-center">𝐋𝐎𝐆𝐈𝐍 𝐏𝐀𝐆𝐄</h2>
+    
+        <form #loginForm="ngForm" (ngSubmit)="login()">
+        <small class="text-danger">{{msg}}</small>    
+            <div class="form-group">
+              <label for="username">𝐔𝐬𝐞𝐫𝐍𝐚𝐦𝐞:</label>
+              <input type="text" class="form-control" name="userName" [(ngModel)]="user.userName"  minlength="4" maxlength="15" placeholder="Enter UserName" name="userName"  ngModel  #name="ngModel" required [class.is-invalid]="name.invalid && name.touched">
+            </div>
+            <span class="text-danger" [class.d-none]="name.valid || name.touched">UserName is required</span>
+            <span *ngIf="name.invalid && name.touched" style="color:red">username should contain 4 to 15 characters</span>
+            
+            <div class="form-group">
+              <label for="password">𝗣𝗮𝘀𝘀𝘄𝗼𝗿𝗱:</label>
+              <input type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="Enter password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{4,10}$" minlength="5" maxlength="10" name="password"  ngModel required #password="ngModel" >
+            </div><span *ngIf="password.invalid && password.touched" style="color:red">password should contain 4 to 10 characters with special characters</span>
+            <br/>
+            <div class="text-Left">
+                <button [disabled]="password.invalid" type="submit"  class="btn btn-secondary">Login</button>
+            </div>
+          </form>
+            <div>
+              <small class="float-right" (click)="gotoregister()">𝙉𝙚𝙬 𝙐𝙨𝙚𝙧 ? 𝙍𝙚𝙜𝙞𝙨𝙩𝙚𝙧 𝙃𝙚𝙧𝙚</small></div>
+            </div>
+    </body>
+    </html>
